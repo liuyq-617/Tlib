@@ -1,6 +1,6 @@
 package org.devops
 
-def pre_test(os){
+def pre_test(os="test"){
     if(os=='win'){
         bat '''
         taskkill /f /t /im python.exe
@@ -79,7 +79,7 @@ def pre_test(os){
         '''
     }else{
         sh'hostname'
-        if (os == ''){
+        if (os == "test"){
             sh '''
             sudo rmtaos || echo "taosd has not installed"
             '''
