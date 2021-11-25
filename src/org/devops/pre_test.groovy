@@ -1,10 +1,6 @@
 package org.devops
 
 def pre_test(os){
-    script{
-        println "start build"
-    }
-    
     if(os=='win'){
         bat '''
         taskkill /f /t /im python.exe
@@ -168,8 +164,8 @@ def pre_test(os){
             case "mac":
                 sh '''
                     cd ${WK}/debug
-                    cmake .. -DOSTYPE=Ningsi60 > /dev/null
-                    make
+                    cmake .. > /dev/null
+                    cmake --build .
                 '''            
                 break   
             case "any":
