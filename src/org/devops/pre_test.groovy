@@ -1,6 +1,7 @@
 package org.devops
 
 def pre_test(os){
+    println "start build"
     if(os=='win'){
         bat '''
         taskkill /f /t /im python.exe
